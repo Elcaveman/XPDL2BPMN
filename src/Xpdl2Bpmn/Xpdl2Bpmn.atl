@@ -1,0 +1,4 @@
+-- @path Xpdl=/XPDL/model/xPDL.ecore
+-- @path Bpmn=/bpmn/model/bpmn.ecore
+module Xpdl2Bpmn;
+create OUT: Bpmn from IN: Xpdl;
