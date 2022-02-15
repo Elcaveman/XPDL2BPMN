@@ -39,7 +39,7 @@ public interface XPDLPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/xPDL";
+	String eNS_URI = "http://www.example.com/xpdl";
 
 	/**
 	 * The package namespace name.
