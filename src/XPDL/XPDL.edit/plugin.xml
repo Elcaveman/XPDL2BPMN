@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated xPDL -->
       <factory
-            uri="http://www.example.org/xPDL"
+            uri="http://www.example.com/xpdl"
             class="xPDL.provider.XPDLItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

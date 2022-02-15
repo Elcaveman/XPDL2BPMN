@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated xPDL -->
       <package
-            uri="http://www.example.org/xPDL"
+            uri="http://www.example.com/xpdl"
             class="xPDL.XPDLPackage"
             genModel="model/xPDL.genmodel"/>
    </extension>
