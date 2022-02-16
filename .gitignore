@@ -60,3 +60,4 @@ local.properties
 #.project
 
 runtime-EclipseApplication/
+*.zip

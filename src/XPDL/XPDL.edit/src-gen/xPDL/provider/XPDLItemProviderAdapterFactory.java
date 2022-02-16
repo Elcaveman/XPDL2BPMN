@@ -96,29 +96,6 @@ public class XPDLItemProviderAdapterFactory extends XPDLAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link xPDL.Participant} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ParticipantItemProvider participantItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link xPDL.Participant}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createParticipantAdapter() {
-		if (participantItemProvider == null) {
-			participantItemProvider = new ParticipantItemProvider(this);
-		}
-
-		return participantItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link xPDL.Pool} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -541,8 +518,6 @@ public class XPDLItemProviderAdapterFactory extends XPDLAdapterFactory
 	public void dispose() {
 		if (xpdlRootItemProvider != null)
 			xpdlRootItemProvider.dispose();
-		if (participantItemProvider != null)
-			participantItemProvider.dispose();
 		if (poolItemProvider != null)
 			poolItemProvider.dispose();
 		if (laneItemProvider != null)

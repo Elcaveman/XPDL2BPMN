@@ -105,7 +105,7 @@ public class XpdlRootItemProvider extends ItemProviderAdapter implements IEditin
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(XPDLPackage.Literals.XPDL_ROOT__PARTICIPANTS);
+			childrenFeatures.add(XPDLPackage.Literals.XPDL_ROOT__POOLS);
 			childrenFeatures.add(XPDLPackage.Literals.XPDL_ROOT__PROCESS);
 			childrenFeatures.add(XPDLPackage.Literals.XPDL_ROOT__MESSAGEFLOWS);
 		}
@@ -175,7 +175,7 @@ public class XpdlRootItemProvider extends ItemProviderAdapter implements IEditin
 		case XPDLPackage.XPDL_ROOT__ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case XPDLPackage.XPDL_ROOT__PARTICIPANTS:
+		case XPDLPackage.XPDL_ROOT__POOLS:
 		case XPDLPackage.XPDL_ROOT__PROCESS:
 		case XPDLPackage.XPDL_ROOT__MESSAGEFLOWS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -195,8 +195,8 @@ public class XpdlRootItemProvider extends ItemProviderAdapter implements IEditin
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(XPDLPackage.Literals.XPDL_ROOT__PARTICIPANTS,
-				XPDLFactory.eINSTANCE.createParticipant()));
+		newChildDescriptors
+				.add(createChildParameter(XPDLPackage.Literals.XPDL_ROOT__POOLS, XPDLFactory.eINSTANCE.createPool()));
 
 		newChildDescriptors.add(
 				createChildParameter(XPDLPackage.Literals.XPDL_ROOT__PROCESS, XPDLFactory.eINSTANCE.createProcess()));

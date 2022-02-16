@@ -24,7 +24,6 @@ import xPDL.GateRule;
 import xPDL.Gateway;
 import xPDL.Lane;
 import xPDL.MessageFlow;
-import xPDL.Participant;
 import xPDL.Pool;
 import xPDL.SubFlow;
 import xPDL.Transition;
@@ -77,8 +76,6 @@ public class XPDLFactoryImpl extends EFactoryImpl implements XPDLFactory {
 		switch (eClass.getClassifierID()) {
 		case XPDLPackage.XPDL_ROOT:
 			return createXpdlRoot();
-		case XPDLPackage.PARTICIPANT:
-			return createParticipant();
 		case XPDLPackage.POOL:
 			return createPool();
 		case XPDLPackage.LANE:
@@ -158,16 +155,6 @@ public class XPDLFactoryImpl extends EFactoryImpl implements XPDLFactory {
 	public XpdlRoot createXpdlRoot() {
 		XpdlRootImpl xpdlRoot = new XpdlRootImpl();
 		return xpdlRoot;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Participant createParticipant() {
-		ParticipantImpl participant = new ParticipantImpl();
-		return participant;
 	}
 
 	/**

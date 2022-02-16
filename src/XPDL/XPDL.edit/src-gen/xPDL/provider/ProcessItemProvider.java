@@ -55,10 +55,25 @@ public class ProcessItemProvider extends ItemProviderAdapter implements IEditing
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPoolPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Pool feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPoolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Process_pool_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Process_pool_feature", "_UI_Process_type"),
+						XPDLPackage.Literals.PROCESS__POOL, true, false, true, null, null, null));
 	}
 
 	/**
@@ -103,7 +118,6 @@ public class ProcessItemProvider extends ItemProviderAdapter implements IEditing
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(XPDLPackage.Literals.PROCESS__WORKFLOW_PARTICIPANTS);
 			childrenFeatures.add(XPDLPackage.Literals.PROCESS__TRANSITIONS);
 			childrenFeatures.add(XPDLPackage.Literals.PROCESS__ACTIVITYSET);
 		}
@@ -173,7 +187,6 @@ public class ProcessItemProvider extends ItemProviderAdapter implements IEditing
 		case XPDLPackage.PROCESS__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case XPDLPackage.PROCESS__WORKFLOW_PARTICIPANTS:
 		case XPDLPackage.PROCESS__TRANSITIONS:
 		case XPDLPackage.PROCESS__ACTIVITYSET:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -192,9 +205,6 @@ public class ProcessItemProvider extends ItemProviderAdapter implements IEditing
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(XPDLPackage.Literals.PROCESS__WORKFLOW_PARTICIPANTS,
-				XPDLFactory.eINSTANCE.createParticipant()));
 
 		newChildDescriptors.add(createChildParameter(XPDLPackage.Literals.PROCESS__TRANSITIONS,
 				XPDLFactory.eINSTANCE.createTransition()));

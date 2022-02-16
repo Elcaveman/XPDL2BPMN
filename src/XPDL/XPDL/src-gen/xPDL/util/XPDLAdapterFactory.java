@@ -21,7 +21,6 @@ import xPDL.Gateway;
 import xPDL.Lane;
 import xPDL.MessageFlow;
 import xPDL.MessageFlowValid;
-import xPDL.Participant;
 import xPDL.Pool;
 import xPDL.SubFlow;
 import xPDL.Transition;
@@ -87,11 +86,6 @@ public class XPDLAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseXpdlRoot(XpdlRoot object) {
 			return createXpdlRootAdapter();
-		}
-
-		@Override
-		public Adapter caseParticipant(Participant object) {
-			return createParticipantAdapter();
 		}
 
 		@Override
@@ -209,20 +203,6 @@ public class XPDLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createXpdlRootAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link xPDL.Participant <em>Participant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see xPDL.Participant
-	 * @generated
-	 */
-	public Adapter createParticipantAdapter() {
 		return null;
 	}
 

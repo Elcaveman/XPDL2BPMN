@@ -68,13 +68,13 @@ public interface XPDLPackage extends EPackage {
 	int XPDL_ROOT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Participants</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Pools</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int XPDL_ROOT__PARTICIPANTS = 0;
+	int XPDL_ROOT__POOLS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Process</b></em>' containment reference list.
@@ -131,61 +131,6 @@ public interface XPDLPackage extends EPackage {
 	int XPDL_ROOT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link xPDL.impl.ParticipantImpl <em>Participant</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see xPDL.impl.ParticipantImpl
-	 * @see xPDL.impl.XPDLPackageImpl#getParticipant()
-	 * @generated
-	 */
-	int PARTICIPANT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Pools</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTICIPANT__POOLS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTICIPANT__ID = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTICIPANT__NAME = 2;
-
-	/**
-	 * The number of structural features of the '<em>Participant</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTICIPANT_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Participant</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTICIPANT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link xPDL.AssociationValid <em>Association Valid</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,7 +138,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getAssociationValid()
 	 * @generated
 	 */
-	int ASSOCIATION_VALID = 13;
+	int ASSOCIATION_VALID = 12;
 
 	/**
 	 * The number of structural features of the '<em>Association Valid</em>' class.
@@ -221,7 +166,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getPool()
 	 * @generated
 	 */
-	int POOL = 2;
+	int POOL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Lanes</b></em>' containment reference list.
@@ -276,7 +221,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getLane()
 	 * @generated
 	 */
-	int LANE = 3;
+	int LANE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Activityset</b></em>' containment reference.
@@ -331,16 +276,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getActivitySet()
 	 * @generated
 	 */
-	int ACTIVITY_SET = 4;
-
-	/**
-	 * The feature id for the '<em><b>Participant</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_SET__PARTICIPANT = 0;
+	int ACTIVITY_SET = 3;
 
 	/**
 	 * The feature id for the '<em><b>Activities</b></em>' containment reference list.
@@ -349,7 +285,7 @@ public interface XPDLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_SET__ACTIVITIES = 1;
+	int ACTIVITY_SET__ACTIVITIES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -358,7 +294,7 @@ public interface XPDLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_SET__ID = 2;
+	int ACTIVITY_SET__ID = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -367,7 +303,7 @@ public interface XPDLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_SET__NAME = 3;
+	int ACTIVITY_SET__NAME = 2;
 
 	/**
 	 * The number of structural features of the '<em>Activity Set</em>' class.
@@ -376,7 +312,7 @@ public interface XPDLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_SET_FEATURE_COUNT = 4;
+	int ACTIVITY_SET_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Activity Set</em>' class.
@@ -395,16 +331,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getProcess()
 	 * @generated
 	 */
-	int PROCESS = 5;
-
-	/**
-	 * The feature id for the '<em><b>Workflow Participants</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS__WORKFLOW_PARTICIPANTS = 0;
+	int PROCESS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -413,7 +340,7 @@ public interface XPDLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__TRANSITIONS = 1;
+	int PROCESS__TRANSITIONS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Activityset</b></em>' containment reference list.
@@ -422,7 +349,16 @@ public interface XPDLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__ACTIVITYSET = 2;
+	int PROCESS__ACTIVITYSET = 1;
+
+	/**
+	 * The feature id for the '<em><b>Pool</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__POOL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -468,7 +404,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getActivity()
 	 * @generated
 	 */
-	int ACTIVITY = 6;
+	int ACTIVITY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -514,7 +450,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getBlockActivity()
 	 * @generated
 	 */
-	int BLOCK_ACTIVITY = 7;
+	int BLOCK_ACTIVITY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -560,7 +496,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getEvent()
 	 * @generated
 	 */
-	int EVENT = 8;
+	int EVENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -624,7 +560,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getGateway()
 	 * @generated
 	 */
-	int GATEWAY = 9;
+	int GATEWAY = 8;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -679,7 +615,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getSubFlow()
 	 * @generated
 	 */
-	int SUB_FLOW = 10;
+	int SUB_FLOW = 9;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -725,7 +661,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getArtifact()
 	 * @generated
 	 */
-	int ARTIFACT = 11;
+	int ARTIFACT = 10;
 
 	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
@@ -753,7 +689,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getDataObject()
 	 * @generated
 	 */
-	int DATA_OBJECT = 12;
+	int DATA_OBJECT = 11;
 
 	/**
 	 * The number of structural features of the '<em>Data Object</em>' class.
@@ -781,7 +717,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getTransitionValid()
 	 * @generated
 	 */
-	int TRANSITION_VALID = 14;
+	int TRANSITION_VALID = 13;
 
 	/**
 	 * The number of structural features of the '<em>Transition Valid</em>' class.
@@ -809,7 +745,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getMessageFlowValid()
 	 * @generated
 	 */
-	int MESSAGE_FLOW_VALID = 15;
+	int MESSAGE_FLOW_VALID = 14;
 
 	/**
 	 * The number of structural features of the '<em>Message Flow Valid</em>' class.
@@ -837,7 +773,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getMessageFlow()
 	 * @generated
 	 */
-	int MESSAGE_FLOW = 16;
+	int MESSAGE_FLOW = 15;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -883,7 +819,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getAssociation()
 	 * @generated
 	 */
-	int ASSOCIATION = 17;
+	int ASSOCIATION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -929,7 +865,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 18;
+	int TRANSITION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -984,7 +920,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getEventTime()
 	 * @generated
 	 */
-	int EVENT_TIME = 19;
+	int EVENT_TIME = 18;
 
 	/**
 	 * The meta object id for the '{@link xPDL.EventType <em>Event Type</em>}' enum.
@@ -994,7 +930,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getEventType()
 	 * @generated
 	 */
-	int EVENT_TYPE = 20;
+	int EVENT_TYPE = 19;
 
 	/**
 	 * The meta object id for the '{@link xPDL.GateRule <em>Gate Rule</em>}' enum.
@@ -1004,7 +940,7 @@ public interface XPDLPackage extends EPackage {
 	 * @see xPDL.impl.XPDLPackageImpl#getGateRule()
 	 * @generated
 	 */
-	int GATE_RULE = 21;
+	int GATE_RULE = 20;
 
 	/**
 	 * Returns the meta object for class '{@link xPDL.XpdlRoot <em>Xpdl Root</em>}'.
@@ -1017,15 +953,15 @@ public interface XPDLPackage extends EPackage {
 	EClass getXpdlRoot();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link xPDL.XpdlRoot#getParticipants <em>Participants</em>}'.
+	 * Returns the meta object for the containment reference list '{@link xPDL.XpdlRoot#getPools <em>Pools</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Participants</em>'.
-	 * @see xPDL.XpdlRoot#getParticipants()
+	 * @return the meta object for the containment reference list '<em>Pools</em>'.
+	 * @see xPDL.XpdlRoot#getPools()
 	 * @see #getXpdlRoot()
 	 * @generated
 	 */
-	EReference getXpdlRoot_Participants();
+	EReference getXpdlRoot_Pools();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link xPDL.XpdlRoot#getProcess <em>Process</em>}'.
@@ -1070,49 +1006,6 @@ public interface XPDLPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getXpdlRoot_Id();
-
-	/**
-	 * Returns the meta object for class '{@link xPDL.Participant <em>Participant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Participant</em>'.
-	 * @see xPDL.Participant
-	 * @generated
-	 */
-	EClass getParticipant();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link xPDL.Participant#getPools <em>Pools</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Pools</em>'.
-	 * @see xPDL.Participant#getPools()
-	 * @see #getParticipant()
-	 * @generated
-	 */
-	EReference getParticipant_Pools();
-
-	/**
-	 * Returns the meta object for the attribute '{@link xPDL.Participant#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see xPDL.Participant#getId()
-	 * @see #getParticipant()
-	 * @generated
-	 */
-	EAttribute getParticipant_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link xPDL.Participant#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see xPDL.Participant#getName()
-	 * @see #getParticipant()
-	 * @generated
-	 */
-	EAttribute getParticipant_Name();
 
 	/**
 	 * Returns the meta object for class '{@link xPDL.Pool <em>Pool</em>}'.
@@ -1211,17 +1104,6 @@ public interface XPDLPackage extends EPackage {
 	EClass getActivitySet();
 
 	/**
-	 * Returns the meta object for the reference '{@link xPDL.ActivitySet#getParticipant <em>Participant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Participant</em>'.
-	 * @see xPDL.ActivitySet#getParticipant()
-	 * @see #getActivitySet()
-	 * @generated
-	 */
-	EReference getActivitySet_Participant();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link xPDL.ActivitySet#getActivities <em>Activities</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1265,17 +1147,6 @@ public interface XPDLPackage extends EPackage {
 	EClass getProcess();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link xPDL.Process#getWorkflowParticipants <em>Workflow Participants</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Workflow Participants</em>'.
-	 * @see xPDL.Process#getWorkflowParticipants()
-	 * @see #getProcess()
-	 * @generated
-	 */
-	EReference getProcess_WorkflowParticipants();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link xPDL.Process#getTransitions <em>Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1296,6 +1167,17 @@ public interface XPDLPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProcess_Activityset();
+
+	/**
+	 * Returns the meta object for the reference '{@link xPDL.Process#getPool <em>Pool</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Pool</em>'.
+	 * @see xPDL.Process#getPool()
+	 * @see #getProcess()
+	 * @generated
+	 */
+	EReference getProcess_Pool();
 
 	/**
 	 * Returns the meta object for the attribute '{@link xPDL.Process#getId <em>Id</em>}'.
@@ -1645,12 +1527,12 @@ public interface XPDLPackage extends EPackage {
 		EClass XPDL_ROOT = eINSTANCE.getXpdlRoot();
 
 		/**
-		 * The meta object literal for the '<em><b>Participants</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Pools</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference XPDL_ROOT__PARTICIPANTS = eINSTANCE.getXpdlRoot_Participants();
+		EReference XPDL_ROOT__POOLS = eINSTANCE.getXpdlRoot_Pools();
 
 		/**
 		 * The meta object literal for the '<em><b>Process</b></em>' containment reference list feature.
@@ -1683,40 +1565,6 @@ public interface XPDLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute XPDL_ROOT__ID = eINSTANCE.getXpdlRoot_Id();
-
-		/**
-		 * The meta object literal for the '{@link xPDL.impl.ParticipantImpl <em>Participant</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see xPDL.impl.ParticipantImpl
-		 * @see xPDL.impl.XPDLPackageImpl#getParticipant()
-		 * @generated
-		 */
-		EClass PARTICIPANT = eINSTANCE.getParticipant();
-
-		/**
-		 * The meta object literal for the '<em><b>Pools</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PARTICIPANT__POOLS = eINSTANCE.getParticipant_Pools();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARTICIPANT__ID = eINSTANCE.getParticipant_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARTICIPANT__NAME = eINSTANCE.getParticipant_Name();
 
 		/**
 		 * The meta object literal for the '{@link xPDL.impl.PoolImpl <em>Pool</em>}' class.
@@ -1797,14 +1645,6 @@ public interface XPDLPackage extends EPackage {
 		EClass ACTIVITY_SET = eINSTANCE.getActivitySet();
 
 		/**
-		 * The meta object literal for the '<em><b>Participant</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_SET__PARTICIPANT = eINSTANCE.getActivitySet_Participant();
-
-		/**
 		 * The meta object literal for the '<em><b>Activities</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1839,14 +1679,6 @@ public interface XPDLPackage extends EPackage {
 		EClass PROCESS = eINSTANCE.getProcess();
 
 		/**
-		 * The meta object literal for the '<em><b>Workflow Participants</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROCESS__WORKFLOW_PARTICIPANTS = eINSTANCE.getProcess_WorkflowParticipants();
-
-		/**
 		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1861,6 +1693,14 @@ public interface XPDLPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROCESS__ACTIVITYSET = eINSTANCE.getProcess_Activityset();
+
+		/**
+		 * The meta object literal for the '<em><b>Pool</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROCESS__POOL = eINSTANCE.getProcess_Pool();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.

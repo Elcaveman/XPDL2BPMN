@@ -26,16 +26,11 @@
       <genEnumLiterals ecoreEnumLiteral="xPDL.ecore#//GateRule/AND"/>
     </genEnums>
     <genClasses ecoreClass="xPDL.ecore#//XpdlRoot">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xPDL.ecore#//XpdlRoot/participants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xPDL.ecore#//XpdlRoot/pools"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xPDL.ecore#//XpdlRoot/process"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xPDL.ecore#//XpdlRoot/messageflows"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xPDL.ecore#//XpdlRoot/diagramName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xPDL.ecore#//XpdlRoot/id"/>
-    </genClasses>
-    <genClasses ecoreClass="xPDL.ecore#//Participant">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xPDL.ecore#//Participant/pools"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xPDL.ecore#//Participant/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xPDL.ecore#//Participant/name"/>
     </genClasses>
     <genClasses ecoreClass="xPDL.ecore#//Pool">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xPDL.ecore#//Pool/lanes"/>
@@ -48,15 +43,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xPDL.ecore#//Lane/name"/>
     </genClasses>
     <genClasses ecoreClass="xPDL.ecore#//ActivitySet">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xPDL.ecore#//ActivitySet/participant"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xPDL.ecore#//ActivitySet/activities"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xPDL.ecore#//ActivitySet/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xPDL.ecore#//ActivitySet/name"/>
     </genClasses>
     <genClasses ecoreClass="xPDL.ecore#//Process">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xPDL.ecore#//Process/workflowParticipants"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xPDL.ecore#//Process/transitions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xPDL.ecore#//Process/activityset"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xPDL.ecore#//Process/pool"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xPDL.ecore#//Process/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xPDL.ecore#//Process/name"/>
     </genClasses>

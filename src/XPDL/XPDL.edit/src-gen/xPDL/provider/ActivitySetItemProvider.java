@@ -56,26 +56,10 @@ public class ActivitySetItemProvider extends ItemProviderAdapter implements IEdi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addParticipantPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Participant feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParticipantPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ActivitySet_participant_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ActivitySet_participant_feature",
-								"_UI_ActivitySet_type"),
-						XPDLPackage.Literals.ACTIVITY_SET__PARTICIPANT, true, false, true, null, null, null));
 	}
 
 	/**

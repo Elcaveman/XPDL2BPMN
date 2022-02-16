@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import xPDL.Activity;
 import xPDL.ActivitySet;
-import xPDL.Participant;
 import xPDL.XPDLPackage;
 
 /**
@@ -31,7 +30,6 @@ import xPDL.XPDLPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xPDL.impl.ActivitySetImpl#getParticipant <em>Participant</em>}</li>
  *   <li>{@link xPDL.impl.ActivitySetImpl#getActivities <em>Activities</em>}</li>
  *   <li>{@link xPDL.impl.ActivitySetImpl#getId <em>Id</em>}</li>
  *   <li>{@link xPDL.impl.ActivitySetImpl#getName <em>Name</em>}</li>
@@ -40,16 +38,6 @@ import xPDL.XPDLPackage;
  * @generated
  */
 public class ActivitySetImpl extends MinimalEObjectImpl.Container implements ActivitySet {
-	/**
-	 * The cached value of the '{@link #getParticipant() <em>Participant</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParticipant()
-	 * @generated
-	 * @ordered
-	 */
-	protected Participant participant;
-
 	/**
 	 * The cached value of the '{@link #getActivities() <em>Activities</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -117,46 +105,6 @@ public class ActivitySetImpl extends MinimalEObjectImpl.Container implements Act
 	@Override
 	protected EClass eStaticClass() {
 		return XPDLPackage.Literals.ACTIVITY_SET;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Participant getParticipant() {
-		if (participant != null && participant.eIsProxy()) {
-			InternalEObject oldParticipant = (InternalEObject) participant;
-			participant = (Participant) eResolveProxy(oldParticipant);
-			if (participant != oldParticipant) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XPDLPackage.ACTIVITY_SET__PARTICIPANT,
-							oldParticipant, participant));
-			}
-		}
-		return participant;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Participant basicGetParticipant() {
-		return participant;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParticipant(Participant newParticipant) {
-		Participant oldParticipant = participant;
-		participant = newParticipant;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XPDLPackage.ACTIVITY_SET__PARTICIPANT, oldParticipant,
-					participant));
 	}
 
 	/**
@@ -236,10 +184,6 @@ public class ActivitySetImpl extends MinimalEObjectImpl.Container implements Act
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case XPDLPackage.ACTIVITY_SET__PARTICIPANT:
-			if (resolve)
-				return getParticipant();
-			return basicGetParticipant();
 		case XPDLPackage.ACTIVITY_SET__ACTIVITIES:
 			return getActivities();
 		case XPDLPackage.ACTIVITY_SET__ID:
@@ -259,9 +203,6 @@ public class ActivitySetImpl extends MinimalEObjectImpl.Container implements Act
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case XPDLPackage.ACTIVITY_SET__PARTICIPANT:
-			setParticipant((Participant) newValue);
-			return;
 		case XPDLPackage.ACTIVITY_SET__ACTIVITIES:
 			getActivities().clear();
 			getActivities().addAll((Collection<? extends Activity>) newValue);
@@ -284,9 +225,6 @@ public class ActivitySetImpl extends MinimalEObjectImpl.Container implements Act
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case XPDLPackage.ACTIVITY_SET__PARTICIPANT:
-			setParticipant((Participant) null);
-			return;
 		case XPDLPackage.ACTIVITY_SET__ACTIVITIES:
 			getActivities().clear();
 			return;
@@ -308,8 +246,6 @@ public class ActivitySetImpl extends MinimalEObjectImpl.Container implements Act
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case XPDLPackage.ACTIVITY_SET__PARTICIPANT:
-			return participant != null;
 		case XPDLPackage.ACTIVITY_SET__ACTIVITIES:
 			return activities != null && !activities.isEmpty();
 		case XPDLPackage.ACTIVITY_SET__ID:

@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link xPDL.Process#getWorkflowParticipants <em>Workflow Participants</em>}</li>
  *   <li>{@link xPDL.Process#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link xPDL.Process#getActivityset <em>Activityset</em>}</li>
+ *   <li>{@link xPDL.Process#getPool <em>Pool</em>}</li>
  *   <li>{@link xPDL.Process#getId <em>Id</em>}</li>
  *   <li>{@link xPDL.Process#getName <em>Name</em>}</li>
  * </ul>
@@ -27,18 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Process extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Workflow Participants</b></em>' containment reference list.
-	 * The list contents are of type {@link xPDL.Participant}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Workflow Participants</em>' containment reference list.
-	 * @see xPDL.XPDLPackage#getProcess_WorkflowParticipants()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Participant> getWorkflowParticipants();
-
 	/**
 	 * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
 	 * The list contents are of type {@link xPDL.Transition}.
@@ -62,6 +50,28 @@ public interface Process extends EObject {
 	 * @generated
 	 */
 	EList<ActivitySet> getActivityset();
+
+	/**
+	 * Returns the value of the '<em><b>Pool</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pool</em>' reference.
+	 * @see #setPool(Pool)
+	 * @see xPDL.XPDLPackage#getProcess_Pool()
+	 * @model required="true"
+	 * @generated
+	 */
+	Pool getPool();
+
+	/**
+	 * Sets the value of the '{@link xPDL.Process#getPool <em>Pool</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pool</em>' reference.
+	 * @see #getPool()
+	 * @generated
+	 */
+	void setPool(Pool value);
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

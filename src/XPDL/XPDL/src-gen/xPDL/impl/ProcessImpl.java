@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import xPDL.ActivitySet;
-import xPDL.Participant;
+import xPDL.Pool;
 import xPDL.Transition;
 import xPDL.XPDLPackage;
 
@@ -31,9 +31,9 @@ import xPDL.XPDLPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xPDL.impl.ProcessImpl#getWorkflowParticipants <em>Workflow Participants</em>}</li>
  *   <li>{@link xPDL.impl.ProcessImpl#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link xPDL.impl.ProcessImpl#getActivityset <em>Activityset</em>}</li>
+ *   <li>{@link xPDL.impl.ProcessImpl#getPool <em>Pool</em>}</li>
  *   <li>{@link xPDL.impl.ProcessImpl#getId <em>Id</em>}</li>
  *   <li>{@link xPDL.impl.ProcessImpl#getName <em>Name</em>}</li>
  * </ul>
@@ -41,16 +41,6 @@ import xPDL.XPDLPackage;
  * @generated
  */
 public class ProcessImpl extends MinimalEObjectImpl.Container implements xPDL.Process {
-	/**
-	 * The cached value of the '{@link #getWorkflowParticipants() <em>Workflow Participants</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkflowParticipants()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Participant> workflowParticipants;
-
 	/**
 	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -70,6 +60,16 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements xPDL.Pr
 	 * @ordered
 	 */
 	protected EList<ActivitySet> activityset;
+
+	/**
+	 * The cached value of the '{@link #getPool() <em>Pool</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPool()
+	 * @generated
+	 * @ordered
+	 */
+	protected Pool pool;
 
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -135,19 +135,6 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements xPDL.Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Participant> getWorkflowParticipants() {
-		if (workflowParticipants == null) {
-			workflowParticipants = new EObjectContainmentEList<Participant>(Participant.class, this,
-					XPDLPackage.PROCESS__WORKFLOW_PARTICIPANTS);
-		}
-		return workflowParticipants;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Transition> getTransitions() {
 		if (transitions == null) {
 			transitions = new EObjectContainmentEList<Transition>(Transition.class, this,
@@ -167,6 +154,45 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements xPDL.Pr
 					XPDLPackage.PROCESS__ACTIVITYSET);
 		}
 		return activityset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Pool getPool() {
+		if (pool != null && pool.eIsProxy()) {
+			InternalEObject oldPool = (InternalEObject) pool;
+			pool = (Pool) eResolveProxy(oldPool);
+			if (pool != oldPool) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XPDLPackage.PROCESS__POOL, oldPool,
+							pool));
+			}
+		}
+		return pool;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Pool basicGetPool() {
+		return pool;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPool(Pool newPool) {
+		Pool oldPool = pool;
+		pool = newPool;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, XPDLPackage.PROCESS__POOL, oldPool, pool));
 	}
 
 	/**
@@ -219,8 +245,6 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements xPDL.Pr
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case XPDLPackage.PROCESS__WORKFLOW_PARTICIPANTS:
-			return ((InternalEList<?>) getWorkflowParticipants()).basicRemove(otherEnd, msgs);
 		case XPDLPackage.PROCESS__TRANSITIONS:
 			return ((InternalEList<?>) getTransitions()).basicRemove(otherEnd, msgs);
 		case XPDLPackage.PROCESS__ACTIVITYSET:
@@ -237,12 +261,14 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements xPDL.Pr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case XPDLPackage.PROCESS__WORKFLOW_PARTICIPANTS:
-			return getWorkflowParticipants();
 		case XPDLPackage.PROCESS__TRANSITIONS:
 			return getTransitions();
 		case XPDLPackage.PROCESS__ACTIVITYSET:
 			return getActivityset();
+		case XPDLPackage.PROCESS__POOL:
+			if (resolve)
+				return getPool();
+			return basicGetPool();
 		case XPDLPackage.PROCESS__ID:
 			return getId();
 		case XPDLPackage.PROCESS__NAME:
@@ -260,10 +286,6 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements xPDL.Pr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case XPDLPackage.PROCESS__WORKFLOW_PARTICIPANTS:
-			getWorkflowParticipants().clear();
-			getWorkflowParticipants().addAll((Collection<? extends Participant>) newValue);
-			return;
 		case XPDLPackage.PROCESS__TRANSITIONS:
 			getTransitions().clear();
 			getTransitions().addAll((Collection<? extends Transition>) newValue);
@@ -271,6 +293,9 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements xPDL.Pr
 		case XPDLPackage.PROCESS__ACTIVITYSET:
 			getActivityset().clear();
 			getActivityset().addAll((Collection<? extends ActivitySet>) newValue);
+			return;
+		case XPDLPackage.PROCESS__POOL:
+			setPool((Pool) newValue);
 			return;
 		case XPDLPackage.PROCESS__ID:
 			setId((String) newValue);
@@ -290,14 +315,14 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements xPDL.Pr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case XPDLPackage.PROCESS__WORKFLOW_PARTICIPANTS:
-			getWorkflowParticipants().clear();
-			return;
 		case XPDLPackage.PROCESS__TRANSITIONS:
 			getTransitions().clear();
 			return;
 		case XPDLPackage.PROCESS__ACTIVITYSET:
 			getActivityset().clear();
+			return;
+		case XPDLPackage.PROCESS__POOL:
+			setPool((Pool) null);
 			return;
 		case XPDLPackage.PROCESS__ID:
 			setId(ID_EDEFAULT);
@@ -317,12 +342,12 @@ public class ProcessImpl extends MinimalEObjectImpl.Container implements xPDL.Pr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case XPDLPackage.PROCESS__WORKFLOW_PARTICIPANTS:
-			return workflowParticipants != null && !workflowParticipants.isEmpty();
 		case XPDLPackage.PROCESS__TRANSITIONS:
 			return transitions != null && !transitions.isEmpty();
 		case XPDLPackage.PROCESS__ACTIVITYSET:
 			return activityset != null && !activityset.isEmpty();
+		case XPDLPackage.PROCESS__POOL:
+			return pool != null;
 		case XPDLPackage.PROCESS__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case XPDLPackage.PROCESS__NAME:

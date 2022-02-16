@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link xPDL.ActivitySet#getParticipant <em>Participant</em>}</li>
  *   <li>{@link xPDL.ActivitySet#getActivities <em>Activities</em>}</li>
  *   <li>{@link xPDL.ActivitySet#getId <em>Id</em>}</li>
  *   <li>{@link xPDL.ActivitySet#getName <em>Name</em>}</li>
@@ -26,28 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ActivitySet extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Participant</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Participant</em>' reference.
-	 * @see #setParticipant(Participant)
-	 * @see xPDL.XPDLPackage#getActivitySet_Participant()
-	 * @model
-	 * @generated
-	 */
-	Participant getParticipant();
-
-	/**
-	 * Sets the value of the '{@link xPDL.ActivitySet#getParticipant <em>Participant</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Participant</em>' reference.
-	 * @see #getParticipant()
-	 * @generated
-	 */
-	void setParticipant(Participant value);
-
 	/**
 	 * Returns the value of the '<em><b>Activities</b></em>' containment reference list.
 	 * The list contents are of type {@link xPDL.Activity}.

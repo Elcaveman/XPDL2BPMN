@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import xPDL.MessageFlow;
-import xPDL.Participant;
+import xPDL.Pool;
 import xPDL.XPDLPackage;
 import xPDL.XpdlRoot;
 
@@ -31,7 +31,7 @@ import xPDL.XpdlRoot;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xPDL.impl.XpdlRootImpl#getParticipants <em>Participants</em>}</li>
+ *   <li>{@link xPDL.impl.XpdlRootImpl#getPools <em>Pools</em>}</li>
  *   <li>{@link xPDL.impl.XpdlRootImpl#getProcess <em>Process</em>}</li>
  *   <li>{@link xPDL.impl.XpdlRootImpl#getMessageflows <em>Messageflows</em>}</li>
  *   <li>{@link xPDL.impl.XpdlRootImpl#getDiagramName <em>Diagram Name</em>}</li>
@@ -42,14 +42,14 @@ import xPDL.XpdlRoot;
  */
 public class XpdlRootImpl extends MinimalEObjectImpl.Container implements XpdlRoot {
 	/**
-	 * The cached value of the '{@link #getParticipants() <em>Participants</em>}' containment reference list.
+	 * The cached value of the '{@link #getPools() <em>Pools</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParticipants()
+	 * @see #getPools()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Participant> participants;
+	protected EList<Pool> pools;
 
 	/**
 	 * The cached value of the '{@link #getProcess() <em>Process</em>}' containment reference list.
@@ -135,12 +135,11 @@ public class XpdlRootImpl extends MinimalEObjectImpl.Container implements XpdlRo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Participant> getParticipants() {
-		if (participants == null) {
-			participants = new EObjectContainmentEList<Participant>(Participant.class, this,
-					XPDLPackage.XPDL_ROOT__PARTICIPANTS);
+	public EList<Pool> getPools() {
+		if (pools == null) {
+			pools = new EObjectContainmentEList<Pool>(Pool.class, this, XPDLPackage.XPDL_ROOT__POOLS);
 		}
-		return participants;
+		return pools;
 	}
 
 	/**
@@ -220,8 +219,8 @@ public class XpdlRootImpl extends MinimalEObjectImpl.Container implements XpdlRo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case XPDLPackage.XPDL_ROOT__PARTICIPANTS:
-			return ((InternalEList<?>) getParticipants()).basicRemove(otherEnd, msgs);
+		case XPDLPackage.XPDL_ROOT__POOLS:
+			return ((InternalEList<?>) getPools()).basicRemove(otherEnd, msgs);
 		case XPDLPackage.XPDL_ROOT__PROCESS:
 			return ((InternalEList<?>) getProcess()).basicRemove(otherEnd, msgs);
 		case XPDLPackage.XPDL_ROOT__MESSAGEFLOWS:
@@ -238,8 +237,8 @@ public class XpdlRootImpl extends MinimalEObjectImpl.Container implements XpdlRo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case XPDLPackage.XPDL_ROOT__PARTICIPANTS:
-			return getParticipants();
+		case XPDLPackage.XPDL_ROOT__POOLS:
+			return getPools();
 		case XPDLPackage.XPDL_ROOT__PROCESS:
 			return getProcess();
 		case XPDLPackage.XPDL_ROOT__MESSAGEFLOWS:
@@ -261,9 +260,9 @@ public class XpdlRootImpl extends MinimalEObjectImpl.Container implements XpdlRo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case XPDLPackage.XPDL_ROOT__PARTICIPANTS:
-			getParticipants().clear();
-			getParticipants().addAll((Collection<? extends Participant>) newValue);
+		case XPDLPackage.XPDL_ROOT__POOLS:
+			getPools().clear();
+			getPools().addAll((Collection<? extends Pool>) newValue);
 			return;
 		case XPDLPackage.XPDL_ROOT__PROCESS:
 			getProcess().clear();
@@ -291,8 +290,8 @@ public class XpdlRootImpl extends MinimalEObjectImpl.Container implements XpdlRo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case XPDLPackage.XPDL_ROOT__PARTICIPANTS:
-			getParticipants().clear();
+		case XPDLPackage.XPDL_ROOT__POOLS:
+			getPools().clear();
 			return;
 		case XPDLPackage.XPDL_ROOT__PROCESS:
 			getProcess().clear();
@@ -318,8 +317,8 @@ public class XpdlRootImpl extends MinimalEObjectImpl.Container implements XpdlRo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case XPDLPackage.XPDL_ROOT__PARTICIPANTS:
-			return participants != null && !participants.isEmpty();
+		case XPDLPackage.XPDL_ROOT__POOLS:
+			return pools != null && !pools.isEmpty();
 		case XPDLPackage.XPDL_ROOT__PROCESS:
 			return process != null && !process.isEmpty();
 		case XPDLPackage.XPDL_ROOT__MESSAGEFLOWS:

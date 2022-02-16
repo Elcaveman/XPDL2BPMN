@@ -25,7 +25,6 @@ import xPDL.Gateway;
 import xPDL.Lane;
 import xPDL.MessageFlow;
 import xPDL.MessageFlowValid;
-import xPDL.Participant;
 import xPDL.Pool;
 import xPDL.SubFlow;
 import xPDL.Transition;
@@ -47,13 +46,6 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 	 * @generated
 	 */
 	private EClass xpdlRootEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass participantEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,7 +265,7 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getXpdlRoot_Participants() {
+	public EReference getXpdlRoot_Pools() {
 		return (EReference) xpdlRootEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -311,42 +303,6 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 	 */
 	public EAttribute getXpdlRoot_Id() {
 		return (EAttribute) xpdlRootEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getParticipant() {
-		return participantEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getParticipant_Pools() {
-		return (EReference) participantEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getParticipant_Id() {
-		return (EAttribute) participantEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getParticipant_Name() {
-		return (EAttribute) participantEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -435,7 +391,7 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActivitySet_Participant() {
+	public EReference getActivitySet_Activities() {
 		return (EReference) activitySetEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -444,17 +400,8 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActivitySet_Activities() {
-		return (EReference) activitySetEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getActivitySet_Id() {
-		return (EAttribute) activitySetEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) activitySetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -463,7 +410,7 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 	 * @generated
 	 */
 	public EAttribute getActivitySet_Name() {
-		return (EAttribute) activitySetEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) activitySetEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -480,7 +427,7 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProcess_WorkflowParticipants() {
+	public EReference getProcess_Transitions() {
 		return (EReference) processEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -489,7 +436,7 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProcess_Transitions() {
+	public EReference getProcess_Activityset() {
 		return (EReference) processEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -498,7 +445,7 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProcess_Activityset() {
+	public EReference getProcess_Pool() {
 		return (EReference) processEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -802,16 +749,11 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 
 		// Create classes and their features
 		xpdlRootEClass = createEClass(XPDL_ROOT);
-		createEReference(xpdlRootEClass, XPDL_ROOT__PARTICIPANTS);
+		createEReference(xpdlRootEClass, XPDL_ROOT__POOLS);
 		createEReference(xpdlRootEClass, XPDL_ROOT__PROCESS);
 		createEReference(xpdlRootEClass, XPDL_ROOT__MESSAGEFLOWS);
 		createEAttribute(xpdlRootEClass, XPDL_ROOT__DIAGRAM_NAME);
 		createEAttribute(xpdlRootEClass, XPDL_ROOT__ID);
-
-		participantEClass = createEClass(PARTICIPANT);
-		createEReference(participantEClass, PARTICIPANT__POOLS);
-		createEAttribute(participantEClass, PARTICIPANT__ID);
-		createEAttribute(participantEClass, PARTICIPANT__NAME);
 
 		poolEClass = createEClass(POOL);
 		createEReference(poolEClass, POOL__LANES);
@@ -824,15 +766,14 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 		createEAttribute(laneEClass, LANE__NAME);
 
 		activitySetEClass = createEClass(ACTIVITY_SET);
-		createEReference(activitySetEClass, ACTIVITY_SET__PARTICIPANT);
 		createEReference(activitySetEClass, ACTIVITY_SET__ACTIVITIES);
 		createEAttribute(activitySetEClass, ACTIVITY_SET__ID);
 		createEAttribute(activitySetEClass, ACTIVITY_SET__NAME);
 
 		processEClass = createEClass(PROCESS);
-		createEReference(processEClass, PROCESS__WORKFLOW_PARTICIPANTS);
 		createEReference(processEClass, PROCESS__TRANSITIONS);
 		createEReference(processEClass, PROCESS__ACTIVITYSET);
+		createEReference(processEClass, PROCESS__POOL);
 		createEAttribute(processEClass, PROCESS__ID);
 		createEAttribute(processEClass, PROCESS__NAME);
 
@@ -926,9 +867,9 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(xpdlRootEClass, XpdlRoot.class, "XpdlRoot", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getXpdlRoot_Participants(), this.getParticipant(), null, "participants", null, 0, -1,
-				XpdlRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getXpdlRoot_Pools(), this.getPool(), null, "pools", null, 0, -1, XpdlRoot.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEReference(getXpdlRoot_Process(), this.getProcess(), null, "process", null, 0, -1, XpdlRoot.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -939,16 +880,6 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getXpdlRoot_Id(), ecorePackage.getEString(), "id", null, 0, 1, XpdlRoot.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(participantEClass, Participant.class, "Participant", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParticipant_Pools(), this.getPool(), null, "pools", null, 1, -1, Participant.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParticipant_Id(), ecorePackage.getEString(), "id", null, 0, 1, Participant.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getParticipant_Name(), ecorePackage.getEString(), "name", null, 0, 1, Participant.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(poolEClass, Pool.class, "Pool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPool_Lanes(), this.getLane(), null, "lanes", null, 1, -1, Pool.class, !IS_TRANSIENT,
@@ -970,9 +901,6 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 
 		initEClass(activitySetEClass, ActivitySet.class, "ActivitySet", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivitySet_Participant(), this.getParticipant(), null, "participant", null, 0, 1,
-				ActivitySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivitySet_Activities(), this.getActivity(), null, "activities", null, 1, -1,
 				ActivitySet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -983,15 +911,15 @@ public class XPDLPackageImpl extends EPackageImpl implements XPDLPackage {
 
 		initEClass(processEClass, xPDL.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProcess_WorkflowParticipants(), this.getParticipant(), null, "workflowParticipants", null, 0,
-				-1, xPDL.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProcess_Transitions(), this.getTransition(), null, "transitions", null, 0, -1,
 				xPDL.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProcess_Activityset(), this.getActivitySet(), null, "activityset", null, 0, -1,
 				xPDL.Process.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcess_Pool(), this.getPool(), null, "pool", null, 1, 1, xPDL.Process.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getProcess_Id(), ecorePackage.getEString(), "id", null, 0, 1, xPDL.Process.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProcess_Name(), ecorePackage.getEString(), "name", null, 0, 1, xPDL.Process.class,

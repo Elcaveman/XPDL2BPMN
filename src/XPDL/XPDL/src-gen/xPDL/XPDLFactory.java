@@ -31,15 +31,6 @@ public interface XPDLFactory extends EFactory {
 	XpdlRoot createXpdlRoot();
 
 	/**
-	 * Returns a new object of class '<em>Participant</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Participant</em>'.
-	 * @generated
-	 */
-	Participant createParticipant();
-
-	/**
 	 * Returns a new object of class '<em>Pool</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

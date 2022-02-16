@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link xPDL.XpdlRoot#getParticipants <em>Participants</em>}</li>
+ *   <li>{@link xPDL.XpdlRoot#getPools <em>Pools</em>}</li>
  *   <li>{@link xPDL.XpdlRoot#getProcess <em>Process</em>}</li>
  *   <li>{@link xPDL.XpdlRoot#getMessageflows <em>Messageflows</em>}</li>
  *   <li>{@link xPDL.XpdlRoot#getDiagramName <em>Diagram Name</em>}</li>
@@ -28,16 +28,16 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface XpdlRoot extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Participants</b></em>' containment reference list.
-	 * The list contents are of type {@link xPDL.Participant}.
+	 * Returns the value of the '<em><b>Pools</b></em>' containment reference list.
+	 * The list contents are of type {@link xPDL.Pool}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Participants</em>' containment reference list.
-	 * @see xPDL.XPDLPackage#getXpdlRoot_Participants()
+	 * @return the value of the '<em>Pools</em>' containment reference list.
+	 * @see xPDL.XPDLPackage#getXpdlRoot_Pools()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Participant> getParticipants();
+	EList<Pool> getPools();
 
 	/**
 	 * Returns the value of the '<em><b>Process</b></em>' containment reference list.

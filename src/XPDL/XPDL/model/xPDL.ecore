@@ -2,8 +2,8 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="xPDL" nsURI="http://www.example.com/xpdl" nsPrefix="xPDL">
   <eClassifiers xsi:type="ecore:EClass" name="XpdlRoot">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="participants" upperBound="-1"
-        eType="#//Participant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pools" upperBound="-1"
+        eType="#//Pool" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="process" upperBound="-1"
         eType="#//Process" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageflows" upperBound="-1"
@@ -12,13 +12,6 @@
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Participant">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pools" lowerBound="1" upperBound="-1"
-        eType="#//Pool" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pool" eSuperTypes="#//AssociationValid #//MessageFlowValid">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lanes" lowerBound="1" upperBound="-1"
@@ -35,7 +28,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivitySet">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="participant" eType="#//Participant"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activities" lowerBound="1"
         upperBound="-1" eType="#//Activity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -43,12 +35,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Process">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="workflowParticipants" upperBound="-1"
-        eType="#//Participant" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
         eType="#//Transition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activityset" upperBound="-1"
         eType="#//ActivitySet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pool" lowerBound="1" eType="#//Pool"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

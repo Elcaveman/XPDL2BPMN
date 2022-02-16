@@ -19,7 +19,6 @@ import xPDL.Gateway;
 import xPDL.Lane;
 import xPDL.MessageFlow;
 import xPDL.MessageFlowValid;
-import xPDL.Participant;
 import xPDL.Pool;
 import xPDL.SubFlow;
 import xPDL.Transition;
@@ -87,13 +86,6 @@ public class XPDLSwitch<T> extends Switch<T> {
 		case XPDLPackage.XPDL_ROOT: {
 			XpdlRoot xpdlRoot = (XpdlRoot) theEObject;
 			T result = caseXpdlRoot(xpdlRoot);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case XPDLPackage.PARTICIPANT: {
-			Participant participant = (Participant) theEObject;
-			T result = caseParticipant(participant);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -286,21 +278,6 @@ public class XPDLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseXpdlRoot(XpdlRoot object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Participant</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Participant</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseParticipant(Participant object) {
 		return null;
 	}
 
